@@ -1,9 +1,10 @@
 package sudoku
 /** handles logic for the sudoku board. 9×9 grid knows nothing about rules **/
 class Board(private val grid: Array<Array<Cell>>) {
-    fun cellAt(pos: Position): Cell = grid[pos.row][pos.col]
-    fun row(r: Int): List<Cell> = grid[r].toList()
     fun column(c: Int): List<Cell> = grid.map { it[c] }
+    fun row(r: Int): List<Cell> = grid[r].toList()
+    fun cellAt(pos: Position): Cell = grid[pos.row][pos.col]
+
 
     fun subgrid(r: Int, c: Int): List<Cell> {
         val br = (r / 3) * 3; val bc = (c / 3) * 3
